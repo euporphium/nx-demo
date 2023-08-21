@@ -1,5 +1,6 @@
 'use client';
 
+import { Header } from '@nx-demo/ui';
 import styled from 'styled-components';
 
 const StyledPage = styled.div`
@@ -22,6 +23,7 @@ export default async function Index() {
               <span> Hello there, </span>
               Welcome app-1 👋
             </h1>
+            <Header />
           </div>
 
           <div id="hero" className="rounded">
