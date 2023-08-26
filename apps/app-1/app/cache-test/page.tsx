@@ -12,7 +12,7 @@ async function getLondonTime() {
 /* eslint-disable-next-line */
 export interface CacheTestProps {}
 
-export async function CacheTest(props: CacheTestProps) {
+export default async function CacheTest(props: CacheTestProps) {
   const time = await getLondonTime();
 
   return (
@@ -22,5 +22,3 @@ export async function CacheTest(props: CacheTestProps) {
     </div>
   );
 }
-
-export default CacheTest;
