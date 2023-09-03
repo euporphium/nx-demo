@@ -1,5 +1,5 @@
 import { Clock } from '@nx-demo/ui';
-import styles from './page.module.css';
+// import styles from './page.module.css';
 
 const timeZone = 'America/Chicago';
 
@@ -19,10 +19,10 @@ export default async function RevalidateTag(props: RevalidateTagProps) {
   const time = await getTime();
 
   return (
-    <div className={styles['container']}>
-      <h1>On-demand Revalidation By Cache Tag</h1>
+    <>
+      <h2>On-demand Revalidation - Cache Tag</h2>
       <Clock timeZone={timeZone} />
       <p>Cache last revalidated: {time}</p>
-    </div>
+    </>
   );
 }

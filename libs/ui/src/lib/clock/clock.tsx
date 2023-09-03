@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import styles from './clock.module.css';
 
-/* eslint-disable-next-line */
 export interface ClockProps {
   timeZone?: string;
 }

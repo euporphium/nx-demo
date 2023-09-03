@@ -1,5 +1,5 @@
 import { Clock } from '@nx-demo/ui';
-import styles from './page.module.css';
+// import styles from './page.module.css';
 
 const revalidateSeconds = 20;
 const timeZone = 'America/New_York';
@@ -20,10 +20,10 @@ export default async function RevalidateTimer(props: RevalidateTimerProps) {
   const time = await getTime();
 
   return (
-    <div className={styles['container']}>
-      <h1>Time-based Revalidation - {revalidateSeconds} second revalidation</h1>
+    <>
+      <h2>Time-based Revalidation - {revalidateSeconds} seconds</h2>
       <Clock timeZone={timeZone} />
       <p>Cache last revalidated: {time}</p>
-    </div>
+    </>
   );
 }
