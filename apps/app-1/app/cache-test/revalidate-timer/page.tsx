@@ -1,10 +1,12 @@
+import { Clock } from '@nx-demo/ui';
 import styles from './page.module.css';
 
 const revalidateSeconds = 20;
+const timeZone = 'America/New_York';
 
 async function getTime() {
   const response = await fetch(
-    'https://timeapi.io/api/Time/current/zone?timeZone=Europe/London',
+    `https://timeapi.io/api/Time/current/zone?timeZone=${timeZone}`,
     { next: { revalidate: revalidateSeconds } }
   );
   const { dateTime } = await response.json();
@@ -19,9 +21,9 @@ export default async function RevalidateTimer(props: RevalidateTimerProps) {
 
   return (
     <div className={styles['container']}>
-      <h1>Time-based Revalidation</h1>
-      <p>This time value invalidates every {revalidateSeconds} seconds</p>
-      <p>Cache last revalidated at (London): {time}</p>
+      <h1>Time-based Revalidation - {revalidateSeconds} second revalidation</h1>
+      <Clock timeZone={timeZone} />
+      <p>Cache last revalidated: {time}</p>
     </div>
   );
 }

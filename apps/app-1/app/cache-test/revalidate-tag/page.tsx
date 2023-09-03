@@ -1,8 +1,11 @@
+import { Clock } from '@nx-demo/ui';
 import styles from './page.module.css';
+
+const timeZone = 'America/Chicago';
 
 async function getTime() {
   const response = await fetch(
-    'https://timeapi.io/api/Time/current/zone?timeZone=America/Chicago',
+    `https://timeapi.io/api/Time/current/zone?timeZone=${timeZone}`,
     { next: { tags: ['tag-test'] } }
   );
   const { dateTime } = await response.json();
@@ -18,7 +21,8 @@ export default async function RevalidateTag(props: RevalidateTagProps) {
   return (
     <div className={styles['container']}>
       <h1>On-demand Revalidation By Cache Tag</h1>
-      <p>Cache last revalidated at (Chicago): {time}</p>
+      <Clock timeZone={timeZone} />
+      <p>Cache last revalidated: {time}</p>
     </div>
   );
 }
