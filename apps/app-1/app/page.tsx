@@ -1,5 +1,4 @@
 import styles from './page.module.css';
-import { Footer, Header } from '@nx-demo/ui';
 
 export default async function Index() {
   /*
@@ -16,8 +15,6 @@ export default async function Index() {
               <span> Hello there, </span>
               Welcome app-1 👋
             </h1>
-            <Header />
-            <Footer />
           </div>
 
           <div id="hero" className="rounded">
