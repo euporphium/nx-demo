@@ -1,3 +1,4 @@
+import { revalidateTag } from 'next/cache';
 import { Clock } from '@nx-demo/ui';
 // import styles from './page.module.css';
 
@@ -18,11 +19,19 @@ export interface RevalidateTagProps {}
 export default async function RevalidateTag(props: RevalidateTagProps) {
   const time = await getTime();
 
+  const submit = async () => {
+    'use server';
+    revalidateTag('tag-test');
+  };
+
   return (
     <>
       <h2>On-demand Revalidation - Cache Tag</h2>
       <Clock timeZone={timeZone} />
       <p>Cache last revalidated: {time}</p>
+      <form action={submit}>
+        <button type="submit">Manually Revalidate Cache</button>
+      </form>
     </>
   );
 }
