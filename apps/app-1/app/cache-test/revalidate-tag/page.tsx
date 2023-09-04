@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { revalidateTag } from 'next/cache';
 import { Clock } from '@nx-demo/ui';
 // import styles from './page.module.css';
@@ -12,6 +13,10 @@ async function getTime() {
   const { dateTime } = await response.json();
   return new Date(dateTime).toLocaleTimeString();
 }
+
+export const metadata: Metadata = {
+  title: 'On-demand Revalidation',
+};
 
 /* eslint-disable-next-line */
 export interface RevalidateTagProps {}

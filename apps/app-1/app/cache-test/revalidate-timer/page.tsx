@@ -1,8 +1,13 @@
+import { Metadata } from 'next';
 import { Clock } from '@nx-demo/ui';
 // import styles from './page.module.css';
 
 const revalidateSeconds = 20;
 const timeZone = 'America/New_York';
+
+export const metadata: Metadata = {
+  title: 'Time-based Revalidation',
+};
 
 async function getTime() {
   const response = await fetch(
