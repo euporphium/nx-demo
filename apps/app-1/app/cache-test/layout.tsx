@@ -4,7 +4,7 @@ export interface LayoutProps {
   children: React.ReactNode;
 }
 
-export function Layout({ children }: LayoutProps) {
+export default function Layout({ children }: LayoutProps) {
   return (
     <main className={styles['container']}>
       <h1>Cache Test</h1>
@@ -12,5 +12,3 @@ export function Layout({ children }: LayoutProps) {
     </main>
   );
 }
-
-export default Layout;
